@@ -1,0 +1,8 @@
+def HARGADISKON(x) :
+    return x * 0.9
+
+def BELANJABESAR(x) -> bool :
+    return x > 200000
+
+print(HARGADISKON(250000), BELANJABESAR(250000))
+print(HARGADISKON(150000), BELANJABESAR(150000))
