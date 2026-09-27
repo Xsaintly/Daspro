@@ -36,30 +36,30 @@ def is_cumlaude(mhs:mahasiswa)->bool:
 #==Input==#
 print(get_nama(
     max_ipk(
-        mahasiswa("yanto", "24060123", "12-10-2000", 3.9),
-        mahasiswa("andri", "24060523", "12-10-2000", 2.9),
-        mahasiswa("yanti", "24060623", "12-10-2000", 4.0),
-        mahasiswa("budi", "24060723", "12-10-2000", 3.1),
-        mahasiswa("pendi", "24060823", "12-10-2000", 3.2),
-        mahasiswa("karman", "24060923", "12-10-2000", 3.3),
-        mahasiswa("karno", "24060223", "10-09-2001", 3.4)
+        mahasiswa("yanto", "24060121", "12-10-2000", 3.9),
+        mahasiswa("andri", "24060122", "12-10-2000", 2.9),
+        mahasiswa("yanti", "24060123", "12-10-2000", 4.0),
+        mahasiswa("budi", "24060124", "12-10-2000", 3.1),
+        mahasiswa("pendi", "24060125", "12-10-2000", 3.2),
+        mahasiswa("karman", "24060126", "12-10-2000", 3.3),
+        mahasiswa("karno", "24060127", "12-10-2000", 3.4)
     )
 ))
 
 # 2. Mencari nama mahasiswa dengan IPK Terendah
 print(get_nama(
     min_ipk(
-        mahasiswa("yanto", "24060123", "12-10-2000", 3.9),
-        mahasiswa("andri", "24060523", "12-10-2000", 2.9),
-        mahasiswa("yanti", "24060623", "12-10-2000", 4.0),
-        mahasiswa("budi", "24060723", "12-10-2000", 3.1),
-        mahasiswa("pendi", "24060823", "12-10-2000", 3.2),
-        mahasiswa("karman", "24060923", "12-10-2000", 3.3),
-        mahasiswa("karno", "24060223", "10-09-2001", 3.4)
+        mahasiswa("yanto", "24060121", "12-10-2000", 3.9),
+        mahasiswa("andri", "24060122", "12-10-2000", 2.9),
+        mahasiswa("yanti", "24060123", "12-10-2000", 4.0),
+        mahasiswa("budi", "24060124", "12-10-2000", 3.1),
+        mahasiswa("pendi", "24060125", "12-10-2000", 3.2),
+        mahasiswa("karman", "24060126", "12-10-2000", 3.3),
+        mahasiswa("karno", "24060127", "12-10-2000", 3.4)
     )
 ))
 
 # 3. Mengecek status cumlaude (gunakan konstruktor juga)
 print(is_cumlaude(
-    mahasiswa("yanto", "24060123", "12-10-2000", 3.9)
+    mahasiswa("yanto", "24060121", "12-10-2000", 3.9)
 ))
