@@ -1,6 +1,9 @@
 #==tuple==#
 type mahasiswa = tuple [str, str, str, float]
 
+#==konstruktor==#
+def mahasiswa(nama:str,nim:str,ttl:str,ipk:float)->mahasiswa:
+    return (nama,nim,ttl,ipk)
 
 #==selektor==#
 def get_nama(nama:mahasiswa) -> str:
@@ -31,26 +34,32 @@ def is_cumlaude(mhs:mahasiswa)->bool:
 
 
 #==Input==#
-print(max_ipk(
-    get_nama(("yanto","24060123","12-10-2000",3.9)),
-    get_nama(("andri","24060523","12-10-2000",2.9)),
-    get_nama(("yanti","24060623","12-10-2000",4.0)),
-    get_nama(("budi","24060723","12-10-2000",3.1)),
-    get_nama(("pendi","24060823","12-10-2000",3.2)),
-    get_nama(("karman","24060923","12-10-2000",3.3)),
-    get_nama(("karno","24060223","10-09-2001",3.4))
+print(get_nama(
+    max_ipk(
+        mahasiswa("yanto", "24060123", "12-10-2000", 3.9),
+        mahasiswa("andri", "24060523", "12-10-2000", 2.9),
+        mahasiswa("yanti", "24060623", "12-10-2000", 4.0),
+        mahasiswa("budi", "24060723", "12-10-2000", 3.1),
+        mahasiswa("pendi", "24060823", "12-10-2000", 3.2),
+        mahasiswa("karman", "24060923", "12-10-2000", 3.3),
+        mahasiswa("karno", "24060223", "10-09-2001", 3.4)
+    )
 ))
 
-print(min_ipk(
-    get_nama(("yanto","24060123","12-10-2000",3.9)),
-    get_nama(("andri","24060523","12-10-2000",2.9)),
-    get_nama(("yanti","24060623","12-10-2000",4.0)),
-    get_nama(("budi","24060723","12-10-2000",3.1)),
-    get_nama(("pendi","24060823","12-10-2000",3.2)),
-    get_nama(("karman","24060923","12-10-2000",3.3)),
-    get_nama(("karno","24060223","10-09-2001",3.4))
+# 2. Mencari nama mahasiswa dengan IPK Terendah
+print(get_nama(
+    min_ipk(
+        mahasiswa("yanto", "24060123", "12-10-2000", 3.9),
+        mahasiswa("andri", "24060523", "12-10-2000", 2.9),
+        mahasiswa("yanti", "24060623", "12-10-2000", 4.0),
+        mahasiswa("budi", "24060723", "12-10-2000", 3.1),
+        mahasiswa("pendi", "24060823", "12-10-2000", 3.2),
+        mahasiswa("karman", "24060923", "12-10-2000", 3.3),
+        mahasiswa("karno", "24060223", "10-09-2001", 3.4)
+    )
 ))
 
+# 3. Mengecek status cumlaude (gunakan konstruktor juga)
 print(is_cumlaude(
-    (("yanto","24060123","12-10-2000",3.9))
+    mahasiswa("yanto", "24060123", "12-10-2000", 3.9)
 ))

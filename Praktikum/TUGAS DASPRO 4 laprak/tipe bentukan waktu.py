@@ -8,7 +8,7 @@ def getmenit(menit:Waktu) -> int :
 def getjam(jam:Waktu) -> int :
     return jam[0]
 
-def detiksincemidnight(j:Waktu) -> int:
+def detiktengahmalam(j:Waktu) -> int:
     return ((getjam(j)*3600) +  (getmenit(j)*60) + (getdetik(j)))
 
 def is_halfday(j:Waktu)->bool:
@@ -27,7 +27,7 @@ def isafter(w1:Waktu, w2:Waktu)->bool:
     else: return  False
 
 
-print(detiksincemidnight(((2),(30),(0))))
+print(detiktengahmalam(((2),(30),(0))))
 print(is_halfday((12,0,0)))
 
 print(isbefore(

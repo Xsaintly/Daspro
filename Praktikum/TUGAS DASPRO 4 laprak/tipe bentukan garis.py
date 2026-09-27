@@ -1,12 +1,12 @@
-type Point = tuple [int, int]
-#makePoint
+type Point = tuple [float, float]
+
 def makepoint (x: float, y : float) -> Point :
     return (x,y)
 def getabsis(p: Point) -> float :
     return p [0]
 def getordinat(p: Point) -> float :
     return p [1]
-#Main Function
+
 def panjang_garis (titik1: Point, titik2: Point) -> float:
     return (((getabsis(titik2) - getabsis(titik1))**2) + ((getordinat(titik2) - getordinat(titik1))**2))**0.5
 def gradien (titik1: Point, titik2: Point) -> float:
@@ -23,4 +23,4 @@ print(issejajar(
     (4,10)##input4
 ))
 print (panjang_garis((0,0),(3,4)))
-print(gradien((0,0), (3,4)))
+print(gradien((0,0), (3,5)))
