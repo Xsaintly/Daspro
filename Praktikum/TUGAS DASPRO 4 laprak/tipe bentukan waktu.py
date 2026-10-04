@@ -29,8 +29,5 @@ def isafter(w1:Waktu, w2:Waktu)->bool:
 
 print(detiktengahmalam(((2),(30),(0))))
 print(is_halfday((12,0,0)))
-
-print(isbefore(
-    ((2,30,10)),
-    ((2,10,10))
-))
+print(isbefore((2,30,10),(2,10,10)))
+print(isafter((2,30,10),(2,10,10)))
