@@ -3,10 +3,10 @@
 # Tanggal   : 23 Oktober 2026
 
 def konso(E,L):
-    return[E]+L
+    return [E]+L
 
-def konso(E,L):
-    return[L]+E
+def konsi(E,L):
+    return L+[E]
 
 def FirstElmt(L):
     return L[0]
