@@ -1,6 +1,6 @@
 # Nama      : Muhammad Deren Julian 
 # nim       : 24060126140191
-# Tanggal   : 7 November 2026
+# Tanggal   : 9 November 2026
 
 from tugas_list import *
 
@@ -22,7 +22,6 @@ def isAtom(S: list[list]) -> bool:
 # Realisasi:  
 def isList(S: list[list]) -> bool:  
     return type(S) == list  
- 
  
 #Definisi dan Spesifikasi Konstruktor List of List  
 #Untuk membedakan dengan konstruktor List biasa, tambahkan fungsi-fungsi berikut: 
