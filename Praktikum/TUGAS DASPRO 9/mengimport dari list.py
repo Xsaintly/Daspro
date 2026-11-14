@@ -2,7 +2,7 @@
 # nim       : 24060126140191
 # Tanggal   : 9 November 2026
 
-from tugas_list import *
+from tugas_list_copy import *
 
 # DEFINISI DAN SPESIFIKASI PREDIKAT KHUSUS LIST  
 # isEmpty: List of List -> boolean  
@@ -86,17 +86,34 @@ print(isMemberS(3, [2, 4, 3, [1], [4,5]])) #-> True
 print(isMemberS(3, [2, 4, 7, [1], [3,5]])) #-> True  
 
 # RemberList: elemen, List of List -> List of List  
-# {RemberList(x,S) menghapus semua elemen x yang ada di list of list S. 
+# {RemberList(x,S) menghapus semua elemen x yang ada di list of list S.
+def RemberList(X, S: list[list]) -> list[list]:
+    if isEmpty(S):
+        return []
+    if isList(firstList(S)):
+        return konsLo(RemberList(X, firstList(S)), RemberList(X, tailList(S)))
+    elif firstList(S) == X:
+        return RemberList(X, tailList(S))
+    else:
+        return konsLo(firstList(S), RemberList(X, tailList(S))) 
 # Contoh aplikasi:  
-# Rember*(3, []) -> []  
-# Rember*(3, [4, 3, [2,4], 3]) -> [4, [2,4]]  
-# Rember*(3, [2, 4, [3,6,9], 5, 3]) -> [2, 4, [6,9], 5]  
+print(RemberList(3, [])) #-> []  
+print(RemberList(3, [4, 3, [2,4], 3])) #-> [4, [2,4]]  
+print(RemberList(3, [2, 4, [3,6,9], 5, 3])) #-> [2, 4, [6,9], 5]  
 
 # MaxLOL: List of List -> elemen  
 # {MaxLOL(S) mengembalikan elemen maksimum di dalam list of list S. 
+def MaxLOL(S: list[list]):
+    if isEmpty(S):
+        return float('-inf')
+    if isList(firstList(S)):
+        m1 = MaxLOL(firstList(S))
+    else:
+        m1 = firstList(S)
+    return max(m1, MaxLOL(tailList(S)))
 # Contoh aplikasi:  
-# Max([4, 5, 6, [8,9,10], [12,0], 8]) -> 12  
-# Max([4, 15, 6, [8,9,10], [12,0], 8]) -> 15  
+print(MaxLOL([4, 5, 6, [8,9,10], [12,0], 8])) #-> 12  
+print(MaxLOL([4, 15, 6, [8,9,10], [12,0], 8])) #-> 15  
 
 # NBElmtAtom: List of List -> integer  
 # {NBElmtAtom(S) mengembalikan banyaknya elemen list of list S yang berupa atom.
@@ -127,24 +144,53 @@ print(NBElmtList([[4, 15], 6, [8, 9], 10, [12], 8])) #-> 3
 print(NBElmtList([[8, 9, 10]])) #-> 1  
  
 # SumLoL: List of List -> integer  
-# {SumLoL(S) mengembalikan jumlah semua elemen dalam list of list S.  
+# {SumLoL(S) mengembalikan jumlah semua elemen dalam list of list S. 
+def SumLoL(S: list[list]) -> int:
+    if isEmpty(S):
+        return 0
+    if isList(firstList(S)):
+        s1 = SumLoL(firstList(S))
+    else:
+        s1 = firstList(S)
+    return s1 + SumLoL(tailList(S)) 
 # Contoh aplikasi:  
-# SumLoL([[]]) -> 0  
-# SumLoL([4, 5, 6, [2, 3, 1]]) -> 21  
-# SumLoL([[2, 3, 4]]) -> 9  
+print(SumLoL([[]])) #-> 0  
+print(SumLoL([4, 5, 6, [2, 3, 1]])) #-> 21  
+print(SumLoL([[2, 3, 4]])) #-> 9 
  
 # MaxNBElmtList: List of List -> integer  
 # {MaxNBElmtList(S) mengembalikan banyaknya elemen list maksimum yang ada pada list of list S.  
+def countElmt(L: list) -> int:
+    if isEmpty(L):
+        return 0
+    return 1 + countElmt(tailList(L))
+
+# Realisasi MaxNBElmtList:
+def MaxNBElmtList(S: list[list]) -> int:
+    if isEmpty(S):
+        return 0
+    if isList(firstList(S)):
+        c = countElmt(firstList(S))
+    else:
+        c = 0
+    return max(c, MaxNBElmtList(tailList(S)))
 # Contoh aplikasi:  
-# MaxNBElmtList([[4,5,6,7], [8,9,10], [12,0], 8]) -> 4  
-# MaxNBElmtList([[4,15], 6, [8, 9], 10, [12], 8]) -> 2  
-# MaxNBElmtList([8, 9, 10]) -> 0  
+print(MaxNBElmtList([[4,5,6,7], [8,9,10], [12,0], 8])) #-> 4  
+print(MaxNBElmtList([[4,15], 6, [8, 9], 10, [12], 8])) #-> 2  
+print(MaxNBElmtList([8, 9, 10])) #-> 0   
  
 # MaxSumElmt: List of List -> integer  
 # {MaxSumElmt(S) mengembalikan elemen maksimum pada list of list S;  
 # Jika elemen berupa list, maka dihitung sum dari elemen dalam list tersebut;  
 # Jika elemen berupa atom, maka nilainya adalah elemen tersebut. 
-        
+def MaxSumElmt(S: list[list]):
+    if isEmpty(S):
+        return float('-inf')
+    if isList(firstList(S)):
+        val = SumLoL(firstList(S))
+    else:
+        val = firstList(S)
+    return max(val, MaxSumElmt(tailList(S)))
 # Contoh aplikasi:  
 #print(MaxSumElmt([[1, 2], 9, [4, 5, 6], 8])) #-> 15 
 # MaxSumElmt([1, 2], 90, [4, 5, 6], 8]) -> 90  
