@@ -72,7 +72,7 @@ def headList(S: list[list])-> list[list]:
 # Max2: 2 elemen -> elemen
 # {Max2(A, B) menghasilkan nilai yang lebih besar dari A dan B.
 # Jika salah satunya None, menghasilkan yang lain.
-# Fungsi bantu untuk MaxLOL, MaxNBElmtList, dan MaxSumElmt.
+# Fungsi bantu untuk MaxLOL.
 # Realisasi:
 def Max2(A, B):
     if A is None:
