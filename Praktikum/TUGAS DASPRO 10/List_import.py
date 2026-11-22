@@ -1,6 +1,6 @@
 # Nama file     : List.py
-# Nama pembuat  : Muhammad Hanif
-# Tanggal       : 17 November 2026
+# Nama pembuat  : Muhammad Deren Julian
+# Tanggal       : 22 November 2026
 # Deskripsi     : 
 
 """
